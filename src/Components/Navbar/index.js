@@ -1,19 +1,36 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { Button } from "../Button";
 import { FaBars, FaTimes, FaCameraRetro } from "react-icons/fa";
 import "./Navbar.css";
 
 function Navbar() {
   const [click, setClick] = useState(false);
 
+  const [button, setButton] = useState(true);
+
   const handleClick = () => setClick(!click);
+
+  console.log(click);
+
+  const closeMobileMenu = () => setClick(false);
+
+  const showButton = () => {
+    if (window.innerWidth <= 960) {
+      setButton(false);
+    } else {
+      setButton(true);
+    }
+  };
+
+  window.addEventListener("resize", showButton);
 
   return (
     <div className="navbar">
       <div className="navbar-container container">
         <Link to="/" className="navbar-logo">
           <FaCameraRetro className="navbar-icon" />
-          PHINPHOTOS
+          Phin Photos
         </Link>
 
         <div className="menu-icon" onClick={handleClick}>
@@ -43,7 +60,9 @@ function Navbar() {
           <li className="nav-btn">
             {button ? (
               <Link to="/signup" className="btn-link">
-                <Button buttonStyle="btn--outline">SIGN UP</Button>
+                <Button buttonStyle="btn--outline" buttonSize="btn--medium">
+                  SIGN UP
+                </Button>
               </Link>
             ) : (
               <Link to="/signup" className="btn-link">
