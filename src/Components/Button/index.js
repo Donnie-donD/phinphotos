@@ -23,12 +23,12 @@ export const Button = ({
     ? buttonSize
     : tamanhos[0];
 
-  const checkButtonColor = cores.includes(buttonColor) ? buttonColor : cores[0];
+  const checkButtonColor = cores.includes(buttonColor) ? buttonColor : null;
 
   return (
     <button
       className={`btn ${checkButtonStyle} ${checkButtonSize} ${checkButtonColor}`}
-      onclick={onClick}
+      onClick={onClick}
       type={type}
     >
       {children}
