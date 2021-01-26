@@ -2,7 +2,6 @@
   background: #121214;
   height: 80px;
   display: flex;
-
   align-items: center;
   font-size: 1.2rem;
   position: sticky;
@@ -12,6 +11,7 @@
 
 .navbar-container {
   /*border: 1px solid rgb(120, 235, 27);*/
+
   display: flex;
   padding: 10px;
   width: 100%;
