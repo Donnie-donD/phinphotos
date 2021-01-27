@@ -37,7 +37,6 @@ function Navbar() {
           <RiCameraLensFill className="navbar-icon" />
           Phin Photos
         </Link>
-
         <div className="menu-icon" onClick={handleClick}>
           {click ? <FaTimes /> : <FaBars />}
         </div>

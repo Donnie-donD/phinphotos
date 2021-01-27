@@ -1,8 +1,7 @@
 .navbar {
-  background: #121214;
+  background: linear-gradient(95deg, rgb(26, 23, 23) 0%, rgb(39, 39, 39) 100%);
   height: 80px;
   display: flex;
-  align-items: center;
   font-size: 1.2rem;
   position: sticky;
   top: 0;
@@ -10,28 +9,18 @@
 }
 
 .navbar-container {
-  /*border: 1px solid rgb(120, 235, 27);*/
-
+  width: 100%;
   display: flex;
-  padding: 10px;
-  width: 100%;
   justify-content: space-between;
-  height: 30px;
-}
-
-.container {
-  z-index: 1;
-  width: 100%;
-  /*max-width: 1300px;*/
-  margin-right: auto;
-  margin-left: auto;
-  /*padding-right: 50px;*/
+  align-items: center;
+  height: 80px;
+  max-width: 1500px;
 }
 
 .navbar-logo {
-  /*border: 1px solid rgb(255, 0, 0);*/
   color: #fff;
   justify-self: start;
+  margin-left: 20px;
   cursor: pointer;
   text-decoration: none;
   font-size: 2rem;
@@ -39,35 +28,26 @@
   align-items: center;
 }
 
-.navbar-icon {
-  /*border: 1px solid rgb(98, 0, 255);*/
-  margin-right: 0.5rem;
+.fa-typo3 {
+  margin-left: 0.5rem;
+  font-size: 1.8rem;
 }
 
 .nav-menu {
-  /*border: 1px solid rgb(255, 0, 157);*/
   display: flex;
-  align-items: center;
-  justify-content: center;
+  grid-gap: 5px;
   list-style: none;
   text-align: center;
   justify-content: flex-end;
+  width: 60vw;
+  margin-right: 2rem;
 }
 
 .nav-item {
-  /*border: 1px solid rgb(43, 255, 0);*/
-  margin: 5px;
   height: 80px;
-  border-bottom: 2px solid transparent;
-}
-
-.nav-item:hover {
-  /*border: 1px solid rgb(255, 251, 0);*/
-  border-bottom: 2px solid #f00946;
 }
 
 .nav-links {
-  /*border: 1px solid rgb(92, 168, 255);*/
   color: #fff;
   display: flex;
   align-items: center;
@@ -76,13 +56,23 @@
   height: 100%;
 }
 
+.nav-links:hover {
+  color: #ff1852;
+  transition: all 0.2s ease-out;
+  transform: scale(1.2);
+}
+
 .fa-bars {
-  /*border: 1px solid rgb(190, 68, 68);*/
   color: #fff;
+}
+
+.nav-links-mobile {
+  display: none;
 }
 
 .menu-icon {
   display: none;
+  color: #fff;
 }
 
 @media screen and (max-width: 960px) {
@@ -91,10 +81,10 @@
   }
 
   .nav-menu {
-    /*border: 1px solid rgb(255, 255, 255);*/
     display: flex;
     flex-direction: column;
-    height: 85vh;
+    width: 100%;
+    height: 90vh;
     position: absolute;
     top: 80px;
     left: -100%;
@@ -103,9 +93,7 @@
   }
 
   .nav-menu.active {
-    /*border: 1px solid rgb(172, 172, 172);*/
-    background: #121316;
-    width: 100%;
+    background: rgb(26, 23, 23, 1);
     justify-content: center;
     left: 0;
     opacity: 1;
@@ -114,7 +102,6 @@
   }
 
   .nav-links {
-    /*border: 1px solid rgb(255, 0, 0);*/
     text-align: center;
     padding: 2rem;
     width: 100%;
@@ -122,34 +109,28 @@
   }
 
   .nav-links:hover {
-    /*border: 1px solid rgb(255, 255, 255);*/
-    color: #f00946;
-    transform: scale(1.2);
-    transition: all 0.3s ease;
-  }
-
-  .nav-item:hover {
-    /*border: 1px solid rgb(76, 0, 255);*/
-    border: none;
-  }
-
-  .nav-item {
-    /*border: 1px solid rgb(0, 255, 234);*/
-    width: 100%;
+    color: hsl(0, 100%, 61%);
+    border-radius: 0;
   }
 
   .navbar-logo {
-    /*border: 1px solid rgb(21, 255, 0);*/
     position: absolute;
     top: 0;
-    left: 0;
+    left: -10px;
     transform: translate(25%, 50%);
   }
 
+  .navbar-logo:nth-child(1) > svg:nth-child(1) {
+    position: relative;
+    left: -10px;
+  }
+
+  .navbar-icon {
+    margin-right: 5px;
+  }
+
   .menu-icon {
-    /*border: 1px solid rgb(0, 255, 213);*/
     display: block;
-    color: #fff;
     position: absolute;
     top: 0;
     right: 0;
@@ -159,17 +140,28 @@
   }
 
   .fa-times {
-    /*border: 1px solid rgb(251, 255, 0);*/
     color: #fff;
     font-size: 2rem;
   }
 
-  .nav-btn {
-    /*border: 1px solid rgb(255, 255, 255);*/
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 110%;
-    height: 110px;
+  .nav-links-mobile {
+    display: block;
+    text-align: center;
+    margin: 2rem auto;
+    border-radius: 4px;
+    width: 80%;
+    text-decoration: none;
+    font-size: 1.5rem;
+    background-color: transparent;
+    color: #fff;
+    padding: 14px 20px;
+    border: 1px solid #fff;
+    transition: all 0.3s ease-out;
+  }
+
+  .nav-links-mobile:hover {
+    background: #fff;
+    color: #242424;
+    transition: 250ms;
   }
 }
